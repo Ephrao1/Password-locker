@@ -88,5 +88,33 @@ def display_credentials():
     return Credentials.display_credentials()
 
 
+    def main():
+    print("WELCOME TO PASSWORD LOCKER.")
+    print("What is your name?")
+    user_name = input()
+    print(f"Hello {user_name}, sign up to Password Locker to create an account.")
+    print('\n')
+    while True:
+        print("You can use these short codes to navigate through :\n sn for Sign Up.\n da for display your account.\n lg for login.\n ex for exit. ")
+        short_code = input().lower()
+        if short_code == 'sn':
+            print("Create an  Account")
+            print("_"*100)
+            acc_name = input('Account name:')
+            print('\n')
+            user_name = input('User name:')
+            print('\n')
+            pwd = input('Password : ')
+            print('\n')
+            e_address = input('Email address:')
+            save_user(create_user(acc_name, user_name, pwd, e_address))
+            print('\n')
+            print(
+                f"Congratulations {acc_name} an Account with the user name  {user_name} has been created successfully.")
+            print(
+                f"You can now login to your {acc_name} account using the password you created.")
+            print('\n')
+
+
 
 
