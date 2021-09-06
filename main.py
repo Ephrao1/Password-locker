@@ -137,6 +137,66 @@ def display_credentials():
                 print("\033[1;32;1m   \n")
                 print(f"Hello.Welcome to {user_name} account")
                 print("\033[1;37;1m   \n")
+                 #======================================== CREDENTIALS =======================================================================
+                while True:
+                    print('''
+                    Use these short codes:
+                    nc -> Create new credential.
+                    cl -> Display your credentials list
+                    ex ->Log out your credentials account.''')
+                    short_code = input().lower()
+                    if short_code == "nc":
+                        print("Create new credential")
+                        print('_' * 20)
+                        credentials_name = input('Credential name:')
+                        print('\n')
+                        user_name = input(f"{credentials_name} user name:")
+                        print('\n')
+                        print('*' * 20)
+                        password = input(f"{credentials_name} password:")
+                        save_credentials(create_credentials(user_name, password, email))
+                           
+                        print('\n')
+                        print(
+                            f"A New {credentials_name} Account with the user name  {user_name} has been created.")
+                        print('\n')
+                    elif short_code == 'cl':
+                        if display_credentials():
+                             print("Here are your credentials details")
+                             print('\n')
+                             for credentials in display_credentials():
+                                 print(
+                                     f"Credential name:{credentials.credentials_name}  User name: {credentials.usr_name} Password:{credentials.password}")
+                                 print('\n')
+                        else:
+                            print('\n')
+                            print(
+                                "You do not have any account saved at the moment")
+                            print('\n')
+                    elif short_code == "ex":
+                        print('\n')
+                        print(
+                            f"You have logged out your {user_name} account")
+                        print("Bye see you some other time")
+                        print('\n')
+                        break
+
+            else:
+                print('\n')
+                print("invalid password!! please try again")
+                print('\n')
+                print('\n')
+
+        elif short_code == "ex":
+                print(f"Thanks {user_name} for your time.I hope you enjoyed my service.Bye...")
+                break
+                
+        else:
+                   print("please use short codes to continue")
+
+
+if __name__ == '__main__':
+    main()
 
 
 
