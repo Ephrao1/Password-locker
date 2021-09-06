@@ -30,3 +30,10 @@ def create_user(acc_name, user_name, password, email):
     '''
     return User.find_by_name(name)
 
+
+    def check_existing_user(name):
+    '''
+    Function that check if a user exists and return a Boolean
+    '''
+    return User.user_exist(name)
+
