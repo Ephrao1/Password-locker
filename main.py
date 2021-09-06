@@ -1,17 +1,10 @@
-import unittest
 from user import User
+from social import Credentials
 
 
-class TestAccount(unittest.TestCase):
-    def setUp(self):
-
-       self.new_user = User("Instagram","Ephraim","password3031","ebundi@gmail.com")
-    def test_init(self):
-        '''
-        test_init test case to test if the object is initialized properly
-        '''
-
-        self.assertEqual(self.new_user.acc_name, "Instagram")
-        self.assertEqual(self.new_user.user_name, "Ephraim")
-        self.assertEqual(self.new_user.password, "password3031")
-        self.assertEqual(self.new_user.email, "ebundi@gmail.com")
+def create_user(acc_name, user_name, password, email):
+    '''
+    Function to create a new user
+    '''
+    new_user = User(acc_name, user_name, password, email)
+    return new_user
