@@ -53,3 +53,40 @@ def create_user(acc_name, user_name, password, email):
     return new_credentials
 
 
+    def save_credentials(credentials):
+    '''
+    Function to save user
+    '''
+    credentials.save_credentials()
+
+
+def delete_credentials(credentials):
+    '''
+    Function to delete a user
+    '''
+    credentials.delete_credentials()
+
+
+def find_credentials(name):
+    '''
+    Function that finds a user by name and returns the user
+    '''
+    return Credentials.find_by_name(name)
+
+
+def check_existing_credentials(name):
+    '''
+    Function that check if an user exists and return a Boolean
+    '''
+    return Credentials.credentials_exist(name)
+
+
+def display_credentials():
+    '''
+    Function that returns saved users
+    '''
+    return Credentials.display_credentials()
+
+
+
+
