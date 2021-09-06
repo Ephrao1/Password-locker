@@ -10,42 +10,42 @@ def create_user(acc_name, user_name, password, email):
     return new_user
 
 
-    def save_user(user):
+def save_user(user):
     '''
     Function to save user
     '''
     user.save_user()
 
 
-    def del_user(user):
+def del_user(user):
     '''
     Function to delete a user
     '''
     user.delete_user()
 
 
-    def find_user(name):
+def find_user(name):
     '''
     Function that finds a user by name and returns the user
     '''
     return User.find_by_name(name)
 
 
-    def check_existing_user(name):
+def check_existing_user(name):
     '''
     Function that check if a user exists and return a Boolean
     '''
     return User.user_exist(name)
 
 
-    def display_user():
+def display_user():
     '''
     Function that returns saved users
     '''
     return User.display_users()
 
 
-    def create_credentials( user_name, password, email):
+def create_credentials( user_name, password, email):
     '''
     Function to create a new user
     '''
@@ -53,7 +53,7 @@ def create_user(acc_name, user_name, password, email):
     return new_credentials
 
 
-    def save_credentials(credentials):
+def save_credentials(credentials):
     '''
     Function to save user
     '''
@@ -88,7 +88,7 @@ def display_credentials():
     return Credentials.display_credentials()
 
 
-    def main():
+def main():
     print("WELCOME TO PASSWORD LOCKER.")
     print("What is your name?")
     user_name = input()
@@ -114,9 +114,7 @@ def display_credentials():
             print(
                 f"You can now login to your {acc_name} account using the password you created.")
             print('\n')
-
-
-             elif short_code == 'da':
+        elif short_code == 'da':
             if display_user():
                 print("Thank you for signing up. Here are your login credentials")
                 print('\n')
@@ -129,7 +127,7 @@ def display_credentials():
                 print(
                      "Invalid username or password.")
                 print('\n')
-                 elif short_code == 'lg':
+        elif short_code == 'lg':
             print("Enter your password to login.")
             search_user = input()
             if check_existing_user(search_user):
@@ -137,7 +135,7 @@ def display_credentials():
                 print("\033[1;32;1m   \n")
                 print(f"Hello.Welcome to {user_name} account")
                 print("\033[1;37;1m   \n")
-                 #======================================== CREDENTIALS =======================================================================
+                #======================================== CREDENTIALS =======================================================================
                 while True:
                     print('''
                     Use these short codes:
@@ -197,7 +195,3 @@ def display_credentials():
 
 if __name__ == '__main__':
     main()
-
-
-
-
