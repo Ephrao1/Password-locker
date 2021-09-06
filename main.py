@@ -37,3 +37,10 @@ def create_user(acc_name, user_name, password, email):
     '''
     return User.user_exist(name)
 
+
+    def display_user():
+    '''
+    Function that returns saved users
+    '''
+    return User.display_users()
+
