@@ -116,5 +116,20 @@ def display_credentials():
             print('\n')
 
 
+             elif short_code == 'da':
+            if display_user():
+                print("Thank you for signing up. Here are your login credentials")
+                print('\n')
+                for user in display_user():
+                     print(
+                         f"User name:{user.acc_name}  User name: {user.user_name} Password:{user.password}")
+                     print('\n')
+            else:
+                print('\n')
+                print(
+                     "Invalid username or password.")
+                print('\n')
+
+
 
 
