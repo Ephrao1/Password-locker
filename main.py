@@ -44,3 +44,12 @@ def create_user(acc_name, user_name, password, email):
     '''
     return User.display_users()
 
+
+    def create_credentials( user_name, password, email):
+    '''
+    Function to create a new user
+    '''
+    new_credentials = Credentials(user_name, password, email)
+    return new_credentials
+
+
