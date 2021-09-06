@@ -129,6 +129,14 @@ def display_credentials():
                 print(
                      "Invalid username or password.")
                 print('\n')
+                 elif short_code == 'lg':
+            print("Enter your password to login.")
+            search_user = input()
+            if check_existing_user(search_user):
+                find_credentials = find_user(find_user)
+                print("\033[1;32;1m   \n")
+                print(f"Hello.Welcome to {user_name} account")
+                print("\033[1;37;1m   \n")
 
 
 
